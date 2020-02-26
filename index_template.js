@@ -7,8 +7,9 @@ const links = json.links;
 const nodes = json.nodes;
 
 const simulation = d3.forceSimulation()
-    .force("link", d3.forceLink().id(function(d) { return d.id; }))
-    .force("charge", d3.forceManyBody())
+    .force("link", d3.forceLink()
+    .id(function(d) { return d.id; }))
+    .force("charge", d3.forceManyBody().strength(-40))
     .force("x", d3.forceX())
     .force("y", d3.forceY());
 
